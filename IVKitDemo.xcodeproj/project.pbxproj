@@ -19,6 +19,9 @@
 		FE79493F209AD5FC008BDBF2 /* UIImage+IVAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FE79493E209AD5FC008BDBF2 /* UIImage+IVAdd.m */; };
 		FE794944209AD861008BDBF2 /* IVProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE794943209AD861008BDBF2 /* IVProgressView.m */; };
 		FE794949209AE414008BDBF2 /* 12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE794948209AE414008BDBF2 /* 12.jpg */; };
+		FEEECCD0209B63CA00DE5CDE /* NSString+IVAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEECCCF209B63CA00DE5CDE /* NSString+IVAdd.m */; };
+		FEEECCD2209B65D900DE5CDE /* IVNString.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEECCD1209B65D900DE5CDE /* IVNString.m */; };
+		FEEECCD5209B687600DE5CDE /* UIView+IVAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEECCD4209B687600DE5CDE /* UIView+IVAdd.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,11 @@
 		FE794942209AD861008BDBF2 /* IVProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVProgressView.h; sourceTree = "<group>"; };
 		FE794943209AD861008BDBF2 /* IVProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVProgressView.m; sourceTree = "<group>"; };
 		FE794948209AE414008BDBF2 /* 12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 12.jpg; sourceTree = "<group>"; };
+		FEEECCCE209B63CA00DE5CDE /* NSString+IVAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+IVAdd.h"; sourceTree = "<group>"; };
+		FEEECCCF209B63CA00DE5CDE /* NSString+IVAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+IVAdd.m"; sourceTree = "<group>"; };
+		FEEECCD1209B65D900DE5CDE /* IVNString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVNString.m; sourceTree = "<group>"; };
+		FEEECCD3209B687600DE5CDE /* UIView+IVAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+IVAdd.h"; sourceTree = "<group>"; };
+		FEEECCD4209B687600DE5CDE /* UIView+IVAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+IVAdd.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +138,7 @@
 		FE79491F209AD4F6008BDBF2 /* IVKitDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				FEEECCD1209B65D900DE5CDE /* IVNString.m */,
 				FE794920209AD4F6008BDBF2 /* IVKitDemoTests.m */,
 				FE794922209AD4F6008BDBF2 /* Info.plist */,
 			);
@@ -148,6 +157,7 @@
 		FE794939209AD5A8008BDBF2 /* IVKit */ = {
 			isa = PBXGroup;
 			children = (
+				FEEECCCA209B636000DE5CDE /* Foundation */,
 				FE794941209AD782008BDBF2 /* IVProgressView */,
 				FE794940209AD731008BDBF2 /* UIKit */,
 			);
@@ -161,6 +171,8 @@
 				FE79493B209AD5F0008BDBF2 /* UIImageView+IVAdd.m */,
 				FE79493D209AD5FC008BDBF2 /* UIImage+IVAdd.h */,
 				FE79493E209AD5FC008BDBF2 /* UIImage+IVAdd.m */,
+				FEEECCD3209B687600DE5CDE /* UIView+IVAdd.h */,
+				FEEECCD4209B687600DE5CDE /* UIView+IVAdd.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -172,6 +184,15 @@
 				FE794943209AD861008BDBF2 /* IVProgressView.m */,
 			);
 			path = IVProgressView;
+			sourceTree = "<group>";
+		};
+		FEEECCCA209B636000DE5CDE /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				FEEECCCE209B63CA00DE5CDE /* NSString+IVAdd.h */,
+				FEEECCCF209B63CA00DE5CDE /* NSString+IVAdd.m */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +331,8 @@
 				FE79490C209AD4F4008BDBF2 /* ViewController.m in Sources */,
 				FE79493C209AD5F0008BDBF2 /* UIImageView+IVAdd.m in Sources */,
 				FE79493F209AD5FC008BDBF2 /* UIImage+IVAdd.m in Sources */,
+				FEEECCD0209B63CA00DE5CDE /* NSString+IVAdd.m in Sources */,
+				FEEECCD5209B687600DE5CDE /* UIView+IVAdd.m in Sources */,
 				FE794917209AD4F6008BDBF2 /* main.m in Sources */,
 				FE794909209AD4F4008BDBF2 /* AppDelegate.m in Sources */,
 			);
@@ -319,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEEECCD2209B65D900DE5CDE /* IVNString.m in Sources */,
 				FE794921209AD4F6008BDBF2 /* IVKitDemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

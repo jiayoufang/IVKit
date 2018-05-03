@@ -33,4 +33,13 @@
  */
 + (UIImage *)iv_imageWithBase64Str:(NSString *)base64Str;
 
+/**
+ 根据颜色生成单一颜色的图片
+
+ @param color 图片颜色
+ @param size 图片size
+ @return 生成的UIImage
+ */
++ (UIImage *)iv_imageWithColor:(UIColor *)color size:(CGSize)size;
+
 @end

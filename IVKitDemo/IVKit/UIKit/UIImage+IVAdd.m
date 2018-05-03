@@ -25,7 +25,6 @@
     return image;
 }
 
-
 - (NSString *)iv_convertImageToBase64{
     NSData *data = UIImageJPEGRepresentation(self, 1.0f);
     NSString *encodedImageStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
@@ -36,6 +35,17 @@
     NSData *data = [[NSData alloc]initWithBase64EncodedString:base64Str options:NSDataBase64DecodingIgnoreUnknownCharacters];
     UIImage *decodeImage = [UIImage imageWithData:data];
     return decodeImage;
+}
+
++ (UIImage *)iv_imageWithColor:(UIColor *)color size:(CGSize)size{
+    CGRect rect = CGRectMake(0, 0,size.width,size.height);
+    UIGraphicsBeginImageContext(size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *colorImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return colorImage;
 }
 
 @end
