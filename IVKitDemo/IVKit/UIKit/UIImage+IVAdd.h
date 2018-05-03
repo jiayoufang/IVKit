@@ -18,4 +18,19 @@
  */
 - (UIImage *)iv_imageWithCornerRadius:(CGFloat)radius;
 
+/**
+ 将UIImage图片转换成Base64字符串
+
+ @return 字符串
+ */
+- (NSString *)iv_convertImageToBase64;
+
+/**
+ 将Base64图片转换成UIImage图片
+
+ @param base64Str 字符串
+ @return UIImage图片
+ */
++ (UIImage *)iv_imageWithBase64Str:(NSString *)base64Str;
+
 @end

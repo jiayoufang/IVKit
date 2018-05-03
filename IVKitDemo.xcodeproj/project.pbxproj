@@ -15,6 +15,10 @@
 		FE794917209AD4F6008BDBF2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE794916209AD4F6008BDBF2 /* main.m */; };
 		FE794921209AD4F6008BDBF2 /* IVKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE794920209AD4F6008BDBF2 /* IVKitDemoTests.m */; };
 		FE79492C209AD4F6008BDBF2 /* IVKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE79492B209AD4F6008BDBF2 /* IVKitDemoUITests.m */; };
+		FE79493C209AD5F0008BDBF2 /* UIImageView+IVAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FE79493B209AD5F0008BDBF2 /* UIImageView+IVAdd.m */; };
+		FE79493F209AD5FC008BDBF2 /* UIImage+IVAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FE79493E209AD5FC008BDBF2 /* UIImage+IVAdd.m */; };
+		FE794944209AD861008BDBF2 /* IVProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE794943209AD861008BDBF2 /* IVProgressView.m */; };
+		FE794949209AE414008BDBF2 /* 12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE794948209AE414008BDBF2 /* 12.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,13 @@
 		FE794927209AD4F6008BDBF2 /* IVKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IVKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE79492B209AD4F6008BDBF2 /* IVKitDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVKitDemoUITests.m; sourceTree = "<group>"; };
 		FE79492D209AD4F6008BDBF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE79493A209AD5F0008BDBF2 /* UIImageView+IVAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+IVAdd.h"; sourceTree = "<group>"; };
+		FE79493B209AD5F0008BDBF2 /* UIImageView+IVAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+IVAdd.m"; sourceTree = "<group>"; };
+		FE79493D209AD5FC008BDBF2 /* UIImage+IVAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+IVAdd.h"; sourceTree = "<group>"; };
+		FE79493E209AD5FC008BDBF2 /* UIImage+IVAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+IVAdd.m"; sourceTree = "<group>"; };
+		FE794942209AD861008BDBF2 /* IVProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVProgressView.h; sourceTree = "<group>"; };
+		FE794943209AD861008BDBF2 /* IVProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVProgressView.m; sourceTree = "<group>"; };
+		FE794948209AE414008BDBF2 /* 12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 12.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +112,12 @@
 		FE794906209AD4F4008BDBF2 /* IVKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				FE794939209AD5A8008BDBF2 /* IVKit */,
 				FE794907209AD4F4008BDBF2 /* AppDelegate.h */,
 				FE794908209AD4F4008BDBF2 /* AppDelegate.m */,
 				FE79490A209AD4F4008BDBF2 /* ViewController.h */,
 				FE79490B209AD4F4008BDBF2 /* ViewController.m */,
+				FE794948209AE414008BDBF2 /* 12.jpg */,
 				FE79490D209AD4F4008BDBF2 /* Main.storyboard */,
 				FE794910209AD4F6008BDBF2 /* Assets.xcassets */,
 				FE794912209AD4F6008BDBF2 /* LaunchScreen.storyboard */,
@@ -130,6 +143,35 @@
 				FE79492D209AD4F6008BDBF2 /* Info.plist */,
 			);
 			path = IVKitDemoUITests;
+			sourceTree = "<group>";
+		};
+		FE794939209AD5A8008BDBF2 /* IVKit */ = {
+			isa = PBXGroup;
+			children = (
+				FE794941209AD782008BDBF2 /* IVProgressView */,
+				FE794940209AD731008BDBF2 /* UIKit */,
+			);
+			path = IVKit;
+			sourceTree = "<group>";
+		};
+		FE794940209AD731008BDBF2 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				FE79493A209AD5F0008BDBF2 /* UIImageView+IVAdd.h */,
+				FE79493B209AD5F0008BDBF2 /* UIImageView+IVAdd.m */,
+				FE79493D209AD5FC008BDBF2 /* UIImage+IVAdd.h */,
+				FE79493E209AD5FC008BDBF2 /* UIImage+IVAdd.m */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		FE794941209AD782008BDBF2 /* IVProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				FE794942209AD861008BDBF2 /* IVProgressView.h */,
+				FE794943209AD861008BDBF2 /* IVProgressView.m */,
+			);
+			path = IVProgressView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +236,7 @@
 		FE7948FC209AD4F4008BDBF2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = IV;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Ivan;
 				TargetAttributes = {
@@ -235,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE794949209AE414008BDBF2 /* 12.jpg in Resources */,
 				FE794914209AD4F6008BDBF2 /* LaunchScreen.storyboard in Resources */,
 				FE794911209AD4F6008BDBF2 /* Assets.xcassets in Resources */,
 				FE79490F209AD4F4008BDBF2 /* Main.storyboard in Resources */,
@@ -262,7 +306,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE794944209AD861008BDBF2 /* IVProgressView.m in Sources */,
 				FE79490C209AD4F4008BDBF2 /* ViewController.m in Sources */,
+				FE79493C209AD5F0008BDBF2 /* UIImageView+IVAdd.m in Sources */,
+				FE79493F209AD5FC008BDBF2 /* UIImage+IVAdd.m in Sources */,
 				FE794917209AD4F6008BDBF2 /* main.m in Sources */,
 				FE794909209AD4F4008BDBF2 /* AppDelegate.m in Sources */,
 			);
@@ -434,7 +481,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U2ER6KQ7G8;
 				INFOPLIST_FILE = IVKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -450,7 +499,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U2ER6KQ7G8;
 				INFOPLIST_FILE = IVKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

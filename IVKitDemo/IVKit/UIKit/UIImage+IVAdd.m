@@ -25,4 +25,17 @@
     return image;
 }
 
+
+- (NSString *)iv_convertImageToBase64{
+    NSData *data = UIImageJPEGRepresentation(self, 1.0f);
+    NSString *encodedImageStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    return encodedImageStr;
+}
+
++ (UIImage *)iv_imageWithBase64Str:(NSString *)base64Str{
+    NSData *data = [[NSData alloc]initWithBase64EncodedString:base64Str options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    UIImage *decodeImage = [UIImage imageWithData:data];
+    return decodeImage;
+}
+
 @end
