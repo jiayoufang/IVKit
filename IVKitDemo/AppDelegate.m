@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "NSString+IVAdd.h"
+#import "IVLogRecordManager.h"
 
 @interface AppDelegate ()
 
@@ -19,17 +20,17 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    NSString *str = @"qwe";
-    
-    NSString *reverse = [str convertChineseToSpellWithTone:NO];
-    NSLog(@"翻转之后的字符串为:\n%@",reverse);
-    if ([str isChinese]) {
-        NSLog(@"字符串是纯汉字");
-    }
-    
-    if ([str includeChinese]) {
-        NSLog(@"包含了汉字");
-    }
+//    NSString *str = @"qwe";
+//
+//    NSString *reverse = [str convertChineseToSpellWithTone:NO];
+//    NSLog(@"翻转之后的字符串为:\n%@",reverse);
+//    if ([str isChinese]) {
+//        NSLog(@"字符串是纯汉字");
+//    }
+//
+//    if ([str includeChinese]) {
+//        NSLog(@"包含了汉字");
+//    }
     
     return YES;
 }
