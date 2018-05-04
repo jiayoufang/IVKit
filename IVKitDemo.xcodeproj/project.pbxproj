@@ -24,6 +24,7 @@
 		FEEECCD5209B687600DE5CDE /* UIView+IVAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEECCD4209B687600DE5CDE /* UIView+IVAdd.m */; };
 		FEEECCDA209B6C8F00DE5CDE /* IVLogRecordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEECCD9209B6C8F00DE5CDE /* IVLogRecordManager.m */; };
 		FEEECCDF209BF92400DE5CDE /* IVUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEECCDE209BF92400DE5CDE /* IVUUID.m */; };
+		FEEECCE3209C4DE600DE5CDE /* IVCalculatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEECCE2209C4DE600DE5CDE /* IVCalculatorManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,8 @@
 		FEEECCD9209B6C8F00DE5CDE /* IVLogRecordManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVLogRecordManager.m; sourceTree = "<group>"; };
 		FEEECCDD209BF92400DE5CDE /* IVUUID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVUUID.h; sourceTree = "<group>"; };
 		FEEECCDE209BF92400DE5CDE /* IVUUID.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVUUID.m; sourceTree = "<group>"; };
+		FEEECCE1209C4DE600DE5CDE /* IVCalculatorManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVCalculatorManager.h; sourceTree = "<group>"; };
+		FEEECCE2209C4DE600DE5CDE /* IVCalculatorManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVCalculatorManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +216,7 @@
 		FEEECCD7209B6C3D00DE5CDE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				FEEECCE0209C4DC200DE5CDE /* ChainProgramming */,
 				FEEECCDC209BF91100DE5CDE /* UUID */,
 				FEEECCDB209BF90500DE5CDE /* LogRecord */,
 			);
@@ -235,6 +239,15 @@
 				FEEECCDE209BF92400DE5CDE /* IVUUID.m */,
 			);
 			path = UUID;
+			sourceTree = "<group>";
+		};
+		FEEECCE0209C4DC200DE5CDE /* ChainProgramming */ = {
+			isa = PBXGroup;
+			children = (
+				FEEECCE1209C4DE600DE5CDE /* IVCalculatorManager.h */,
+				FEEECCE2209C4DE600DE5CDE /* IVCalculatorManager.m */,
+			);
+			path = ChainProgramming;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +386,7 @@
 				FE79490C209AD4F4008BDBF2 /* ViewController.m in Sources */,
 				FEEECCDA209B6C8F00DE5CDE /* IVLogRecordManager.m in Sources */,
 				FEEECCDF209BF92400DE5CDE /* IVUUID.m in Sources */,
+				FEEECCE3209C4DE600DE5CDE /* IVCalculatorManager.m in Sources */,
 				FE79493C209AD5F0008BDBF2 /* UIImageView+IVAdd.m in Sources */,
 				FE79493F209AD5FC008BDBF2 /* UIImage+IVAdd.m in Sources */,
 				FEEECCD0209B63CA00DE5CDE /* NSString+IVAdd.m in Sources */,
