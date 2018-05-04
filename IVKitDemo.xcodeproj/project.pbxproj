@@ -23,6 +23,7 @@
 		FEEECCD2209B65D900DE5CDE /* IVNString.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEECCD1209B65D900DE5CDE /* IVNString.m */; };
 		FEEECCD5209B687600DE5CDE /* UIView+IVAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEECCD4209B687600DE5CDE /* UIView+IVAdd.m */; };
 		FEEECCDA209B6C8F00DE5CDE /* IVLogRecordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEECCD9209B6C8F00DE5CDE /* IVLogRecordManager.m */; };
+		FEEECCDF209BF92400DE5CDE /* IVUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEECCDE209BF92400DE5CDE /* IVUUID.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		FEEECCD4209B687600DE5CDE /* UIView+IVAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+IVAdd.m"; sourceTree = "<group>"; };
 		FEEECCD8209B6C8F00DE5CDE /* IVLogRecordManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVLogRecordManager.h; sourceTree = "<group>"; };
 		FEEECCD9209B6C8F00DE5CDE /* IVLogRecordManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVLogRecordManager.m; sourceTree = "<group>"; };
+		FEEECCDD209BF92400DE5CDE /* IVUUID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVUUID.h; sourceTree = "<group>"; };
+		FEEECCDE209BF92400DE5CDE /* IVUUID.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVUUID.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,10 +213,28 @@
 		FEEECCD7209B6C3D00DE5CDE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				FEEECCDC209BF91100DE5CDE /* UUID */,
+				FEEECCDB209BF90500DE5CDE /* LogRecord */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FEEECCDB209BF90500DE5CDE /* LogRecord */ = {
+			isa = PBXGroup;
+			children = (
 				FEEECCD8209B6C8F00DE5CDE /* IVLogRecordManager.h */,
 				FEEECCD9209B6C8F00DE5CDE /* IVLogRecordManager.m */,
 			);
-			path = Utils;
+			path = LogRecord;
+			sourceTree = "<group>";
+		};
+		FEEECCDC209BF91100DE5CDE /* UUID */ = {
+			isa = PBXGroup;
+			children = (
+				FEEECCDD209BF92400DE5CDE /* IVUUID.h */,
+				FEEECCDE209BF92400DE5CDE /* IVUUID.m */,
+			);
+			path = UUID;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,6 +372,7 @@
 				FE794944209AD861008BDBF2 /* IVProgressView.m in Sources */,
 				FE79490C209AD4F4008BDBF2 /* ViewController.m in Sources */,
 				FEEECCDA209B6C8F00DE5CDE /* IVLogRecordManager.m in Sources */,
+				FEEECCDF209BF92400DE5CDE /* IVUUID.m in Sources */,
 				FE79493C209AD5F0008BDBF2 /* UIImageView+IVAdd.m in Sources */,
 				FE79493F209AD5FC008BDBF2 /* UIImage+IVAdd.m in Sources */,
 				FEEECCD0209B63CA00DE5CDE /* NSString+IVAdd.m in Sources */,
