@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE719DE220A27E0F0007450F /* IVCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE719DE120A27E0F0007450F /* IVCardView.m */; };
+		FE719DE520A27E1A0007450F /* IVCardViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE719DE420A27E1A0007450F /* IVCardViewCell.m */; };
 		FE794909209AD4F4008BDBF2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE794908209AD4F4008BDBF2 /* AppDelegate.m */; };
 		FE79490C209AD4F4008BDBF2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE79490B209AD4F4008BDBF2 /* ViewController.m */; };
 		FE79490F209AD4F4008BDBF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE79490D209AD4F4008BDBF2 /* Main.storyboard */; };
@@ -45,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FE719DE020A27E0F0007450F /* IVCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVCardView.h; sourceTree = "<group>"; };
+		FE719DE120A27E0F0007450F /* IVCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVCardView.m; sourceTree = "<group>"; };
+		FE719DE320A27E1A0007450F /* IVCardViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVCardViewCell.h; sourceTree = "<group>"; };
+		FE719DE420A27E1A0007450F /* IVCardViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVCardViewCell.m; sourceTree = "<group>"; };
 		FE794904209AD4F4008BDBF2 /* IVKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IVKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE794907209AD4F4008BDBF2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FE794908209AD4F4008BDBF2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -106,6 +112,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE719DDF20A27DBC0007450F /* IVCardView */ = {
+			isa = PBXGroup;
+			children = (
+				FE719DE020A27E0F0007450F /* IVCardView.h */,
+				FE719DE120A27E0F0007450F /* IVCardView.m */,
+				FE719DE320A27E1A0007450F /* IVCardViewCell.h */,
+				FE719DE420A27E1A0007450F /* IVCardViewCell.m */,
+			);
+			path = IVCardView;
+			sourceTree = "<group>";
+		};
 		FE7948FB209AD4F4008BDBF2 = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +225,7 @@
 		FEEECCD6209B6C1200DE5CDE /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FE719DDF20A27DBC0007450F /* IVCardView */,
 				FE794941209AD782008BDBF2 /* IVProgressView */,
 			);
 			path = Components;
@@ -385,6 +403,7 @@
 				FE794944209AD861008BDBF2 /* IVProgressView.m in Sources */,
 				FE79490C209AD4F4008BDBF2 /* ViewController.m in Sources */,
 				FEEECCDA209B6C8F00DE5CDE /* IVLogRecordManager.m in Sources */,
+				FE719DE220A27E0F0007450F /* IVCardView.m in Sources */,
 				FEEECCDF209BF92400DE5CDE /* IVUUID.m in Sources */,
 				FEEECCE3209C4DE600DE5CDE /* IVCalculatorManager.m in Sources */,
 				FE79493C209AD5F0008BDBF2 /* UIImageView+IVAdd.m in Sources */,
@@ -393,6 +412,7 @@
 				FEEECCD5209B687600DE5CDE /* UIView+IVAdd.m in Sources */,
 				FE794917209AD4F6008BDBF2 /* main.m in Sources */,
 				FE794909209AD4F4008BDBF2 /* AppDelegate.m in Sources */,
+				FE719DE520A27E1A0007450F /* IVCardViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

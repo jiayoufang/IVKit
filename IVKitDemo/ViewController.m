@@ -7,11 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "IVProgressView.h"
-#import "UIImage+IVAdd.h"
-#import "IVUUID.h"
+#import "IVCardView.h"
 
-@interface ViewController ()
+@interface ViewController ()<IVCardViewDelegate,IVCardViewDataSource>
+
+@property (nonatomic,strong) IVCardView *cardView;
 
 @end
 
@@ -20,31 +20,67 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-//    IVProgressView *progressView = [[IVProgressView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
-//    progressView.backgroundColor = [UIColor redColor];
-//    progressView.progress = 0.7;
-//    [self.view addSubview:progressView];
-    
-//    UIImage *image = [UIImage imageNamed:@"12.jpg"];
-//    NSString *str = [image iv_convertImageToBase64];
-//    NSLog(@"str : %@",str);
-//
-//    UIImage *decodedImage = [UIImage iv_imageWithBase64Str:str];
-//
-//    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
-//    [self.view addSubview:imageView];
-//    imageView.image = decodedImage;
-    
+    self.view.backgroundColor = [UIColor greenColor];
+
+    IVCardView *cardView = [[IVCardView alloc]initWithFrame:CGRectMake(20, 20, 300, 400) directions:IVCardViewDirectionAll];
+    cardView.dataSource = self;
+    cardView.delegate = self;
+    [self.view addSubview:cardView];
+    self.cardView = cardView;
+    [self.cardView realodData];
+        
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    //ADBDDE17-946D-46DB-B594-6E2F79C50A1E
-    NSString *uuid = [[IVUUID uuid]UUIDString];
-    NSLog(@"UUID %@",uuid);
+- (NSInteger)numberOfCellsInCardView:(IVCardView *)cardView{
+    return 20;
 }
 
+- (IVCardViewCell *)cardView:(IVCardView *)cardView cellAtIndex:(NSInteger)index{
+    static NSString *identifier = @"MyCell";
+    IVCardViewCell *cell = [cardView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[IVCardViewCell alloc]initWithStyle:IVCardViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    cell.titleLabel.text = [NSString stringWithFormat:@"Index %ld",(long)index];
+    
+    return cell;
+}
+
+- (void)cardView:(IVCardView *)cardView didSelectedCardViewCell:(IVCardViewCell *)cell{
+    NSLog(@"执行了单击操作");
+}
+
+- (void)cardView:(IVCardView *)cardView draggableDirection:(IVCardViewDirection)direction progress:(float)progress{
+    NSLog(@"滑动的方向为 %@ 进度为 %.2f",[self directionStr:direction],progress);
+}
+
+- (void)cardView:(IVCardView *)cardView didDraggedCardViewCell:(IVCardViewCell *)cell finished:(BOOL)finished{
+    NSLog(@"执行滑动操作结束 %@",finished ? @"成功了" : @"失败了");
+}
+
+- (NSString *)directionStr:(IVCardViewDirection)direction{
+    switch (direction) {
+        case IVCardViewDirectionUp:
+        {return @"Up";}
+            break;
+
+        case IVCardViewDirectionDown:
+        {return @"Down";}
+            break;
+
+        case IVCardViewDirectionRight:
+        {return @"Right";}
+            break;
+
+        case IVCardViewDirectionLeft:
+        {return @"Left";}
+            break;
+
+        default:
+            return @"未知";
+            break;
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
