@@ -23,6 +23,8 @@ typedef NS_ENUM(NSInteger,IVCardViewCellStyle) {
 
 @property (nonatomic,strong,readonly) UILabel *titleLabel;
 
+@property (nonatomic,assign) NSInteger index;
+
 @end
 
 NS_ASSUME_NONNULL_END

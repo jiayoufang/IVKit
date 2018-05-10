@@ -31,9 +31,6 @@
 //    if ([str includeChinese]) {
 //        NSLog(@"包含了汉字");
 //    }
-    
-
-    
     return YES;
 }
 

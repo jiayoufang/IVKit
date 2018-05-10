@@ -24,11 +24,13 @@ typedef NS_OPTIONS(NSInteger, IVCardViewDirection) {
 
 @optional
 
-- (void)cardView:(IVCardView *)cardView didSelectedCardViewCell:(IVCardViewCell *)cell;
+- (void)cardView:(IVCardView *)cardView didSelectCardViewCell:(IVCardViewCell *)cell;
+
+- (void)cardView:(IVCardView *)cardView willDragCardViewCell:(IVCardViewCell *)cell;
 
 - (void)cardView:(IVCardView *)cardView draggingDirection:(IVCardViewDirection)direction progress:(float)progress;
 
-- (void)cardView:(IVCardView *)cardView didDraggedCardViewCell:(IVCardViewCell *)cell finished:(BOOL)finished;
+- (void)cardView:(IVCardView *)cardView didDragCardViewCell:(IVCardViewCell *)cell finished:(BOOL)finished;
 
 @end
 
@@ -55,6 +57,8 @@ typedef NS_OPTIONS(NSInteger, IVCardViewDirection) {
 - (instancetype)initWithFrame:(CGRect)frame directions:(IVCardViewDirection)directions;
 
 - (IVCardViewCell *)dequeueReusableCellWithIdentifier:(NSString *)identifier;// Used by the delegate to acquire an already allocated cell, in lieu of allocating a new one.
+
+- (nullable __kindof IVCardViewCell *)cellAtIndex:(NSInteger )index;   // returns nil if cell is not visible or index path is out of range
 
 - (void)realodData;
 
