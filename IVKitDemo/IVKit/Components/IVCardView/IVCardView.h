@@ -28,7 +28,7 @@ typedef NS_OPTIONS(NSInteger, IVCardViewDirection) {
 
 - (void)cardView:(IVCardView *)cardView willDragCardViewCell:(IVCardViewCell *)cell;
 
-- (void)cardView:(IVCardView *)cardView draggingDirection:(IVCardViewDirection)direction progress:(float)progress;
+- (void)cardView:(IVCardView *)cardView draggingCardViewCell:(IVCardViewCell *)cell direction:(IVCardViewDirection)direction progress:(float)progress;
 
 - (void)cardView:(IVCardView *)cardView didDragCardViewCell:(IVCardViewCell *)cell finished:(BOOL)finished;
 
@@ -43,6 +43,13 @@ typedef NS_OPTIONS(NSInteger, IVCardViewDirection) {
 
 @optional
 
+/**
+ 当没有足够的数据时候会调用，注意会调用多次，切记不要重复加载
+
+ @param cardView 处理的cardview
+ */
+- (void)noMoreDataOfCardView:(IVCardView *)cardView;
+
 @end
 
 @interface IVCardView : UIView
@@ -50,7 +57,7 @@ typedef NS_OPTIONS(NSInteger, IVCardViewDirection) {
 @property (nonatomic,weak) id<IVCardViewDelegate> delegate;
 @property (nonatomic,weak) id<IVCardViewDataSource> dataSource;
 
-@property (nonatomic,assign) IVCardViewDirection directions;
+@property (nonatomic,assign) IVCardViewDirection removedDirections;///<可以执行移除操作的移动方向
 
 //@property (nonatomic,strong,readonly) NSArray<__kindof IVCardViewCell *> *visibleCells;
 

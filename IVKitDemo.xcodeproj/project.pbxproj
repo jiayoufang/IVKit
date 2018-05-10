@@ -21,6 +21,7 @@
 		FE79493F209AD5FC008BDBF2 /* UIImage+IVAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FE79493E209AD5FC008BDBF2 /* UIImage+IVAdd.m */; };
 		FE794944209AD861008BDBF2 /* IVProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE794943209AD861008BDBF2 /* IVProgressView.m */; };
 		FE794949209AE414008BDBF2 /* 12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE794948209AE414008BDBF2 /* 12.jpg */; };
+		FEC01F2E20A3EB240034BBCF /* IVReusableCellManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC01F2D20A3EB240034BBCF /* IVReusableCellManager.m */; };
 		FEEECCD0209B63CA00DE5CDE /* NSString+IVAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEECCCF209B63CA00DE5CDE /* NSString+IVAdd.m */; };
 		FEEECCD2209B65D900DE5CDE /* IVNString.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEECCD1209B65D900DE5CDE /* IVNString.m */; };
 		FEEECCD5209B687600DE5CDE /* UIView+IVAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEECCD4209B687600DE5CDE /* UIView+IVAdd.m */; };
@@ -74,6 +75,8 @@
 		FE794942209AD861008BDBF2 /* IVProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVProgressView.h; sourceTree = "<group>"; };
 		FE794943209AD861008BDBF2 /* IVProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVProgressView.m; sourceTree = "<group>"; };
 		FE794948209AE414008BDBF2 /* 12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 12.jpg; sourceTree = "<group>"; };
+		FEC01F2C20A3EB240034BBCF /* IVReusableCellManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVReusableCellManager.h; sourceTree = "<group>"; };
+		FEC01F2D20A3EB240034BBCF /* IVReusableCellManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVReusableCellManager.m; sourceTree = "<group>"; };
 		FEEECCCE209B63CA00DE5CDE /* NSString+IVAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+IVAdd.h"; sourceTree = "<group>"; };
 		FEEECCCF209B63CA00DE5CDE /* NSString+IVAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+IVAdd.m"; sourceTree = "<group>"; };
 		FEEECCD1209B65D900DE5CDE /* IVNString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVNString.m; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				FE719DE120A27E0F0007450F /* IVCardView.m */,
 				FE719DE320A27E1A0007450F /* IVCardViewCell.h */,
 				FE719DE420A27E1A0007450F /* IVCardViewCell.m */,
+				FEC01F2C20A3EB240034BBCF /* IVReusableCellManager.h */,
+				FEC01F2D20A3EB240034BBCF /* IVReusableCellManager.m */,
 			);
 			path = IVCardView;
 			sourceTree = "<group>";
@@ -413,6 +418,7 @@
 				FE794917209AD4F6008BDBF2 /* main.m in Sources */,
 				FE794909209AD4F4008BDBF2 /* AppDelegate.m in Sources */,
 				FE719DE520A27E1A0007450F /* IVCardViewCell.m in Sources */,
+				FEC01F2E20A3EB240034BBCF /* IVReusableCellManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
