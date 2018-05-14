@@ -30,7 +30,7 @@ typedef NS_OPTIONS(NSInteger, IVCardViewDirection) {
 
 - (void)cardView:(IVCardView *)cardView draggingCardViewCell:(IVCardViewCell *)cell direction:(IVCardViewDirection)direction progress:(float)progress;
 
-- (void)cardView:(IVCardView *)cardView didDragCardViewCell:(IVCardViewCell *)cell finished:(BOOL)finished;
+- (void)cardView:(IVCardView *)cardView didDragCardViewCell:(IVCardViewCell *)cell direction:(IVCardViewDirection)direction;
 
 @end
 

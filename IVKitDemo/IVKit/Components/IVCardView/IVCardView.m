@@ -48,11 +48,6 @@ static NSInteger kMaxNumOfCells = 3;
 #pragma mark - Public Methods
 
 - (IVCardViewCell *)dequeueReusableCellWithIdentifier:(NSString *)identifier{
-//    IVCardViewCell *cell = [self.reusableCells firstObject];
-//    if (cell) {
-//        [self.reusableCells removeObject:cell];
-//    }
-//    return cell;
     IVCardViewCell *cell = [self.reusableCellManager pop:identifier];
     return cell;
 }
@@ -63,18 +58,18 @@ static NSInteger kMaxNumOfCells = 3;
     NSAssert(self.dataSource, @"dataSource must not be nil");
     NSAssert([self.dataSource respondsToSelector:@selector(cardView:cellAtIndex:)], @"cardView:cellAtIndex: must be implement");
 //    NSInteger number = [self.dataSource numberOfCellsInCardView:self];
-//    CGAffineTransform transform = CGAffineTransformIdentity;
+    CGAffineTransform transform = CGAffineTransformIdentity;
     for (NSInteger i = self.currentIndex; i < self.currentIndex + kMaxNumOfCells; i++) {
         IVCardViewCell *cell = [self buildCellAtIndex:i];
         [self.visibleCells addObject:cell];
         cell.frame = CGRectInset(self.bounds, 10, 10);
         [self insertSubview:cell atIndex:0];
         
-//        NSInteger index = i - self.currentIndex;
-//        CGAffineTransform translation = CGAffineTransformTranslate(transform, 0, 15 * index);
-//        CGAffineTransform scale = CGAffineTransformScale(transform, 1.0 - index * 0.1, 1.0);
-//        cell.transform = CGAffineTransformConcat(translation, scale);
-        
+        NSInteger index = i - self.currentIndex;
+        CGAffineTransform translation = CGAffineTransformTranslate(transform, 0, 15 * index);
+        CGAffineTransform scale = CGAffineTransformScale(transform, 1.0 - index * 0.1, 1.0);
+        cell.transform = CGAffineTransformConcat(translation, scale);
+        cell.originalFrame = cell.frame;
 //        if (index == 0) {
 //            self.originalFrameOfFirstCell = cell.frame;
 //        }else if (index == 1){
@@ -226,123 +221,43 @@ static NSInteger kMaxNumOfCells = 3;
         movingCell.transform = CGAffineTransformIdentity;
     }
     
-//    [self resetCellWhileMovingCellWithProgressX:progressX];
-    
     if (self.delegate && [self.delegate respondsToSelector:@selector(cardView:draggingCardViewCell:direction:progress:)]) {
         [self.delegate cardView:self draggingCardViewCell:movingCell direction:self.movingDirection progress:self.movingProgress];
     }
 }
 
-//- (void)resetCellWhileMovingCellWithProgressX:(float)progressX{
-//    NSInteger count = self.visibleCells.count;
-//    if (count <= 0) {
-//        return;
-//    }
-//
-//    IVCardViewCell *firstCell = [self.visibleCells objectAtIndex:0];
-////    CGRect firstFrame = firstCell.frame;
-//
-//    if (self.movingDirection == IVCardViewDirectionRight) {
-//        firstCell.transform = CGAffineTransformRotate(CGAffineTransformIdentity, MIN(progressX, 1.0) * M_PI_4 * 0.4);
-//    }else if (self.movingDirection == IVCardViewDirectionLeft){
-//        firstCell.transform = CGAffineTransformRotate(CGAffineTransformIdentity, MAX(progressX, -1.0) * M_PI_4 * 0.4);
-//    }else{
-//        firstCell.transform = CGAffineTransformIdentity;
-//    }
-//
-//    if (count <= 1) {
-//        return;
-//    }
-//
-//    IVCardViewCell *secondCell = [self.visibleCells objectAtIndex:1];
-//
-//    CGFloat moveByX = self.originalFrameOfFirstCell.origin.x - self.originalFrameOfSecondCell.origin.x;
-//    CGFloat moveByY = self.originalFrameOfFirstCell.origin.y - self.originalFrameOfSecondCell.origin.y;
-//    CGFloat moveByW = self.originalFrameOfFirstCell.size.width - self.originalFrameOfSecondCell.size.width;
-//    CGFloat moveByH = self.originalFrameOfFirstCell.size.height - self.originalFrameOfSecondCell.size.height;
-//    CGRect secondNewFrame = CGRectMake(self.originalFrameOfSecondCell.origin.x + moveByX*self.movingProgress, self.originalFrameOfSecondCell.origin.y + moveByY*self.movingProgress, self.originalFrameOfSecondCell.size.width + moveByW*self.movingProgress, self.originalFrameOfSecondCell.size.height + moveByH*self.movingProgress);
-//    secondCell.frame = secondNewFrame;
-//
-//    if (count <= 2) {
-//        return;
-//    }
-//    IVCardViewCell *thirdCell = [self.visibleCells objectAtIndex:2];
-//
-//    CGFloat moveByX1 = self.originalFrameOfSecondCell.origin.x - self.originalFrameOfThirdCell.origin.x;
-//    CGFloat moveByY1 = self.originalFrameOfSecondCell.origin.y - self.originalFrameOfThirdCell.origin.y;
-//    CGFloat moveByW1 = self.originalFrameOfSecondCell.size.width - self.originalFrameOfThirdCell.size.width;
-//    CGFloat moveByH1 = self.originalFrameOfSecondCell.size.height - self.originalFrameOfThirdCell.size.height;
-//    CGRect thirdNewFrame = CGRectMake(self.originalFrameOfThirdCell.origin.x + moveByX1*self.movingProgress, self.originalFrameOfThirdCell.origin.y + moveByY1*self.movingProgress, self.originalFrameOfThirdCell.size.width + moveByW1*self.movingProgress, self.originalFrameOfThirdCell.size.height + moveByH1*self.movingProgress);
-//    thirdCell.frame = thirdNewFrame;
-//}
-
 - (void)cellDidMove:(IVCardViewCell *)movingCell gesture:(UIPanGestureRecognizer *)pan{
     BOOL finished = [self judgeMovedSuccess:pan];
     if (finished) {
-        NSLog(@"移除成功");
         if (self.removedDirections & self.movingDirection) {
-            //[self.reusableCells addObject:movingCell];
             [self.reusableCellManager push:movingCell];
             self.currentIndex = movingCell.index + 1;
             self.willLoadCell = nil;
             movingCell.transform = CGAffineTransformIdentity;
             [movingCell removeFromSuperview];
+            
+            [self.visibleCells removeObject:movingCell];
+//            [self realodData];
+            [UIView animateWithDuration:0.5 animations:^{
+                IVCardViewCell *cell1 = self.visibleCells[0];
+                IVCardViewCell *cell2 = self.visibleCells[1];
+                cell2.transform = cell1.transform;
+                cell1.transform = movingCell.transform;
+            }];
         }else{
             movingCell.center = self.originalCenterOfMovingCell;
             movingCell.transform = CGAffineTransformIdentity;
         }
     }else{
-        NSLog(@"移除失败");
         movingCell.center = self.originalCenterOfMovingCell;
         movingCell.transform = CGAffineTransformIdentity;
     }
     
-//    [self resetVisibleCells:finished];
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(cardView:didDragCardViewCell:finished:)]) {
-        [self.delegate cardView:self didDragCardViewCell:movingCell finished:finished];
+    if (finished && self.delegate && [self.delegate respondsToSelector:@selector(cardView:didDragCardViewCell:direction:)]) {
+        [self.delegate cardView:self didDragCardViewCell:movingCell direction:self.movingDirection];
     }
-    
-    [self.visibleCells removeObject:movingCell];
 }
-
-//- (void)resetVisibleCells:(BOOL)success{
-//    NSInteger count = self.visibleCells.count;
-//
-//    if (success) {
-//        if (count <= 0) {
-//            return;
-//        }
-//        IVCardViewCell *firstCell = [self.visibleCells objectAtIndex:0];
-//        firstCell.frame = self.originalFrameOfFirstCell;
-//        if (count <= 1) {
-//            return;
-//        }
-//        IVCardViewCell *secondCell = [self.visibleCells objectAtIndex:1];
-//        secondCell.frame = self.originalFrameOfFirstCell;
-//        if (count <= 2) {
-//            return;
-//        }
-//        IVCardViewCell *thirdCell = [self.visibleCells objectAtIndex:2];
-//        thirdCell.frame = self.originalFrameOfSecondCell;
-//    }else{
-//        if (count <= 0) {
-//            return;
-//        }
-//        IVCardViewCell *firstCell = [self.visibleCells objectAtIndex:0];
-//        firstCell.frame = self.originalFrameOfFirstCell;
-//        if (count <= 1) {
-//            return;
-//        }
-//        IVCardViewCell *secondCell = [self.visibleCells objectAtIndex:1];
-//        secondCell.frame = self.originalFrameOfSecondCell;
-//        if (count <= 2) {
-//            return;
-//        }
-//        IVCardViewCell *thirdCell = [self.visibleCells objectAtIndex:2];
-//        thirdCell.frame = self.originalFrameOfThirdCell;
-//    }
-//}
 
 - (BOOL)judgeMovedSuccess:(UIPanGestureRecognizer *)pan{
     if (self.movingProgress >= 1.0) {

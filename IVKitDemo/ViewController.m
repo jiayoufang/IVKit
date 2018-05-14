@@ -48,9 +48,14 @@
 
 - (void)buildData{
     NSInteger count = self.dataArray.count;
-    for (NSInteger i = count; i < count + 25; i++) {
+    for (NSInteger i = count; i < count + 5; i++) {
         [self.dataArray addObject:[NSString stringWithFormat:@"哈哈哈哈 %ld",(long)i]];
     }
+}
+
+- (void)noMoreDataOfCardView:(IVCardView *)cardView{
+    [self buildData];
+    [cardView realodData];
 }
 
 - (NSInteger)numberOfCellsInCardView:(IVCardView *)cardView{

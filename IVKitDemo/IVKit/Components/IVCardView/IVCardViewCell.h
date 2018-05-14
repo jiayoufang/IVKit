@@ -25,6 +25,8 @@ typedef NS_ENUM(NSInteger,IVCardViewCellStyle) {
 
 @property (nonatomic,assign) NSInteger index;
 
+@property (nonatomic,assign) CGRect originalFrame;
+
 @end
 
 NS_ASSUME_NONNULL_END

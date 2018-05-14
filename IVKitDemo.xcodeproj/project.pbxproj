@@ -21,6 +21,8 @@
 		FE79493F209AD5FC008BDBF2 /* UIImage+IVAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FE79493E209AD5FC008BDBF2 /* UIImage+IVAdd.m */; };
 		FE794944209AD861008BDBF2 /* IVProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE794943209AD861008BDBF2 /* IVProgressView.m */; };
 		FE794949209AE414008BDBF2 /* 12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE794948209AE414008BDBF2 /* 12.jpg */; };
+		FE8B089320A7D39700FDDB15 /* IVSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8B089220A7D39700FDDB15 /* IVSecondViewController.m */; };
+		FE8B089A20A7D99D00FDDB15 /* IVTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8B089920A7D99D00FDDB15 /* IVTimer.m */; };
 		FEC01F2E20A3EB240034BBCF /* IVReusableCellManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC01F2D20A3EB240034BBCF /* IVReusableCellManager.m */; };
 		FEEECCD0209B63CA00DE5CDE /* NSString+IVAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEECCCF209B63CA00DE5CDE /* NSString+IVAdd.m */; };
 		FEEECCD2209B65D900DE5CDE /* IVNString.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEECCD1209B65D900DE5CDE /* IVNString.m */; };
@@ -75,6 +77,10 @@
 		FE794942209AD861008BDBF2 /* IVProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVProgressView.h; sourceTree = "<group>"; };
 		FE794943209AD861008BDBF2 /* IVProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVProgressView.m; sourceTree = "<group>"; };
 		FE794948209AE414008BDBF2 /* 12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 12.jpg; sourceTree = "<group>"; };
+		FE8B089120A7D39700FDDB15 /* IVSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVSecondViewController.h; sourceTree = "<group>"; };
+		FE8B089220A7D39700FDDB15 /* IVSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVSecondViewController.m; sourceTree = "<group>"; };
+		FE8B089820A7D99D00FDDB15 /* IVTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVTimer.h; sourceTree = "<group>"; };
+		FE8B089920A7D99D00FDDB15 /* IVTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVTimer.m; sourceTree = "<group>"; };
 		FEC01F2C20A3EB240034BBCF /* IVReusableCellManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVReusableCellManager.h; sourceTree = "<group>"; };
 		FEC01F2D20A3EB240034BBCF /* IVReusableCellManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVReusableCellManager.m; sourceTree = "<group>"; };
 		FEEECCCE209B63CA00DE5CDE /* NSString+IVAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+IVAdd.h"; sourceTree = "<group>"; };
@@ -156,6 +162,8 @@
 				FE794908209AD4F4008BDBF2 /* AppDelegate.m */,
 				FE79490A209AD4F4008BDBF2 /* ViewController.h */,
 				FE79490B209AD4F4008BDBF2 /* ViewController.m */,
+				FE8B089120A7D39700FDDB15 /* IVSecondViewController.h */,
+				FE8B089220A7D39700FDDB15 /* IVSecondViewController.m */,
 				FE794948209AE414008BDBF2 /* 12.jpg */,
 				FE79490D209AD4F4008BDBF2 /* Main.storyboard */,
 				FE794910209AD4F6008BDBF2 /* Assets.xcassets */,
@@ -218,6 +226,15 @@
 			path = IVProgressView;
 			sourceTree = "<group>";
 		};
+		FE8B089720A7D98A00FDDB15 /* IVTimer */ = {
+			isa = PBXGroup;
+			children = (
+				FE8B089820A7D99D00FDDB15 /* IVTimer.h */,
+				FE8B089920A7D99D00FDDB15 /* IVTimer.m */,
+			);
+			path = IVTimer;
+			sourceTree = "<group>";
+		};
 		FEEECCCA209B636000DE5CDE /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +256,7 @@
 		FEEECCD7209B6C3D00DE5CDE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				FE8B089720A7D98A00FDDB15 /* IVTimer */,
 				FEEECCE0209C4DC200DE5CDE /* ChainProgramming */,
 				FEEECCDC209BF91100DE5CDE /* UUID */,
 				FEEECCDB209BF90500DE5CDE /* LogRecord */,
@@ -417,8 +435,10 @@
 				FEEECCD5209B687600DE5CDE /* UIView+IVAdd.m in Sources */,
 				FE794917209AD4F6008BDBF2 /* main.m in Sources */,
 				FE794909209AD4F4008BDBF2 /* AppDelegate.m in Sources */,
+				FE8B089A20A7D99D00FDDB15 /* IVTimer.m in Sources */,
 				FE719DE520A27E1A0007450F /* IVCardViewCell.m in Sources */,
 				FEC01F2E20A3EB240034BBCF /* IVReusableCellManager.m in Sources */,
+				FE8B089320A7D39700FDDB15 /* IVSecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
